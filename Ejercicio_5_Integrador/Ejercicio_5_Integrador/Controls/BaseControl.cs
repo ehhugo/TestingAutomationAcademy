@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 
 namespace Ejercicio_5_Integrador.Controls
 {
@@ -52,7 +51,7 @@ namespace Ejercicio_5_Integrador.Controls
             {
                 try
                 {
-                    return new WebDriverWait(this.Driver, System.TimeSpan.FromSeconds(50)).Until<IWebElement>(d => d.FindElement(this.locator));
+                    return this.Driver.FindElementWait(this.locator, 30);
                 }
                 catch
                 {

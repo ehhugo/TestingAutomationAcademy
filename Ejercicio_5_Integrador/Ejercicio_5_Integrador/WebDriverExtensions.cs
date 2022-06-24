@@ -30,7 +30,7 @@ namespace Ejercicio_5_Integrador
         {
             try
             {
-                driver.WaitUntil(() => driver.FindElement(by).Displayed);
+                driver.WaitUntilVisible(by, secondsTimeout);
                 return driver.FindElement(by);
             }
             catch
